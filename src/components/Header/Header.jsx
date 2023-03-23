@@ -1,17 +1,32 @@
-import { Link } from 'react-router-dom';
-import logo from '../../images/logo.svg'
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
+import logo from '../../images/logo.svg';
+import Navigation from '../Navigation/Navigation';
+import NavigationLoggedIn from '../NavigationLoggedIn/NavigationLoggedIn';
 
-export default function Header () {
+function Header({ loggedIn }) {
+  const { pathname } = useLocation();
+  const colorHeader = pathname === '/' ? 'header_theme_black' : 'header_theme_light';
+  const visible = pathname === '/signin' || pathname === '/signup';
 
+  return (
+    (!visible)
+    && (
+      <header className={`section header ${colorHeader}`}>
 
-    return (
-        <header className='header'>
-            <img className='header__logo' src={logo} alt='logo'></img>
-            <div className='header__conteiner'>
-                <Link className='header__siginin' >Регистрация</Link>
-                <Link className='header__siginup'>Войти</Link>
-            </div>
-        </header>
+        <Link to="/" className="header__logo link-animation">
+          <img
+            className="header__img"
+            src={logo}
+            alt="логотип"
+          />
+        </Link>
+
+        {loggedIn ? <NavigationLoggedIn /> : <Navigation />}
+
+      </header>
     )
+  );
 }
+
+export default Header;

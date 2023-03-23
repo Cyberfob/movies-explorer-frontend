@@ -1,16 +1,22 @@
 import './Main.css';
-import Header from '../Header/Header';
-import main_logo from '../../images/main_logo.svg'
+import Promo from './Promo/Promo';
+import AboutProject from './AboutProject/AboutProject';
+import Techs from './Techs/Techs';
+import AboutMe from './AboutMe/AboutMe';
+import Portfolio from './Portfolio/Portfolio';
+import NavTab from './NavTab/NavTab';
 
-export default function Main () {
-    return (
-        <div className='main_conteiner'>
-    <Header></Header>
-        <main className='main'>
-            <h1 className='main__title'>Учебный проект студента факультета Веб-разработки.</h1>
-            <img className='main__logo' src={main_logo}></img>
-        </main>
-        </div>
-    );
+function Main() {
+  return (
+    <main>
+      <Promo />
+      <NavTab />
+      <AboutProject />
+      <Techs />
+      <AboutMe />
+      <Portfolio />
+    </main>
+  );
 }
-    
+
+export default Main;
