@@ -18,18 +18,6 @@ function MoviesCard() {
 
   return (
     <article className="movies-card">
-      <div className="movies-card__container">
-        <div className="movies-card__info">
-          <h2 className="movies-card__title">33 слова о дизайне </h2>
-          <p className="movies-card__duration">1ч 47м</p>
-        </div>
-        <button
-          className={`movies-card__button ${typeButton} ${favoriteEnabled} link-animation`}
-          type="button"
-          aria-label="Сохранить"
-          onClick={toggleFavorite}
-        />
-      </div>
       <a className="movies-card__link-image link-animation">
         <img
           className="movies-card__image"
@@ -37,6 +25,22 @@ function MoviesCard() {
           alt="Описание картинки"
         />
       </a>
+      <div className="movies-card__container">
+        <div className="movies-card__info">
+          <h2 className="movies-card__title">33 слова о дизайне </h2>
+
+
+        </div>
+        <button
+          className={`movies-card__button ${typeButton} ${favoriteEnabled} link-animation`}
+          type="button"
+          aria-label="Сохранить"
+          onClick={toggleFavorite}
+        />
+
+      </div>
+      <hr className='movies-card__line'></hr>
+      <p className="movies-card__duration">1ч 47м</p>
     </article>
   );
 }

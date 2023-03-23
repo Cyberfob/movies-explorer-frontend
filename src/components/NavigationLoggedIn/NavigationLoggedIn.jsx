@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './NavigationLoggedIn.css';
+import icon from '../../images/profile-icon.svg'
 
 function NavigationLoggedIn() {
   const { pathname } = useLocation();
@@ -88,14 +89,13 @@ function NavigationLoggedIn() {
                   navigation-logged-in__link_type_profile
                   link-animation"
               >
-                Аккаунт
+                <img src={icon} alt="иконка кнопки" className="navigation-logged-in__btn-icon" />
               </Link>
             </li>
           </ul>
         </nav>
 
         <div className={`navigation-logged-in__cover ${coverActive}`} />
-
       </div>
     )
   );

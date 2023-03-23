@@ -23,6 +23,12 @@ function MoviesCardList() {
         <li className="movies-cards__item">
           <MoviesCard />
         </li>
+        <li className="movies-cards__item">
+          <MoviesCard />
+        </li>
+        <li className="movies-cards__item">
+          <MoviesCard />
+        </li>
       </ul>
 
       <div className="movies-cards__button-more-wrapper">

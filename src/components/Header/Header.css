@@ -1,9 +1,9 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding-top: 18px;
   padding-bottom: 18px;
+  justify-content: space-between;
 }
 
 .header_theme_black {
