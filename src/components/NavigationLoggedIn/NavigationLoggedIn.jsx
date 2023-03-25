@@ -26,7 +26,7 @@ function NavigationLoggedIn() {
   return (
     (visible)
     && (
-      <div className="navigation-logged-in">
+      <section className="navigation-logged-in">
 
         <button
           onClick={toggleBurger}
@@ -81,22 +81,22 @@ function NavigationLoggedIn() {
                 Сохранённые фильмы
               </Link>
             </li>
-            <li className="navigation-logged-in__list-item">
-              <Link
-                to="/profile"
-                className="
+          </ul>
+          <div className={`navigation-logged-in__profile`}>
+            <Link
+              to="/profile"
+              className={`${isBurgerOpen ? 'navigation-logged-in__link_type_profile-burger' : ''}
                   navigation-logged-in__link
                   navigation-logged-in__link_type_profile
-                  link-animation"
-              >
-                <img src={icon} alt="иконка кнопки" className="navigation-logged-in__btn-icon" />
-              </Link>
-            </li>
-          </ul>
+                  link-animation`}
+            >
+              <img src={icon} alt="иконка кнопки" className="navigation-logged-in__btn-icon" />
+            </Link>
+          </div>
         </nav>
 
         <div className={`navigation-logged-in__cover ${coverActive}`} />
-      </div>
+      </section>
     )
   );
 }

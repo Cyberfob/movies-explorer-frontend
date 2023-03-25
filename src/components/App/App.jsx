@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <section className="app">
       <Header
         loggedIn={loggedIn}
       />
@@ -43,7 +43,7 @@ function App() {
       </Routes>
 
       <Footer />
-    </div>
+    </section>
   );
 }
 

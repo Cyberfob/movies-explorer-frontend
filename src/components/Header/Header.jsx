@@ -12,7 +12,7 @@ function Header({ loggedIn }) {
   return (
     (!visible)
     && (
-      <header className={`section header ${colorHeader}`}>
+      <header className={`section header ${colorHeader} ${pathname === '/' ? 'header_promo' : ''}`}>
 
         <Link to="/" className="header__logo link-animation">
           <img
@@ -22,7 +22,7 @@ function Header({ loggedIn }) {
           />
         </Link>
 
-        {loggedIn ? <NavigationLoggedIn /> : <Navigation />}
+        {pathname === '/' ? <Navigation /> : <NavigationLoggedIn />}
 
       </header>
     )

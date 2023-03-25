@@ -3,7 +3,7 @@ import './SearchForm.css';
 
 function SearchForm() {
   return (
-    <div className="section search-form">
+    <section className="section search-form">
       <form className="search-form__container">
         <fieldset className="search-form__field search-form__field-input">
           <div className="search-form__icon" />
@@ -40,7 +40,7 @@ function SearchForm() {
         </fieldset>
       </form>
       <hr className="line" />
-    </div>
+    </section>
   );
 }
 

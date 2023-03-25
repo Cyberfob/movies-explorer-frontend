@@ -3,6 +3,10 @@
   align-items: center;
   padding-top: 18px;
   padding-bottom: 18px;
+
+}
+
+.header_promo {
   justify-content: space-between;
 }
 
