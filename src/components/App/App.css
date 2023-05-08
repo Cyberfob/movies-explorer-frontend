@@ -1,5 +1,5 @@
 @import url('../../vendor/normalize.css');
-@import url('../../vendor/fonts/inter.css');
+@import url('../../vendor/fonts/fonts.css');
 
 .app {
   max-width: 1280px;
@@ -45,6 +45,10 @@
 .link-animation:hover {
   opacity: .7;
   transition: .2s;
+}
+
+.button-animation:disabled {
+  opacity: 1;
 }
 
 @media screen and (max-width: 768px) {

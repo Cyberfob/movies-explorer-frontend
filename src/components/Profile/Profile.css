@@ -78,6 +78,22 @@
   font-weight: 500;
 }
 
+.profile__form-error {
+  color: #ff3055;
+  font-weight: 400;
+  padding: 0 0 12px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.profile__button:disabled {
+  color: #989898;
+  cursor: default;
+}
+
+
+
 @media screen and (max-width: 768px) {
   .profile__title {
     padding-bottom: 96px;
