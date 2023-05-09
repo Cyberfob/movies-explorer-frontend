@@ -42,22 +42,12 @@ class MainApi {
             .then(this._checkResponse)
     }
 
-    async getMovies() {
-
+    getSavedMovies() {
+        return fetch(`${this._url}/movies`, {
+            method: 'GET',
+            headers: this._headers,
+        }).then(this._handleResponse);
     }
-
-
-    /* async getInitCards() {
-         const request = {
-             method: "GET",
-             headers: {
-                 Authorization: `Bearer ${this._getToken()}`,
-                 ...this._headers
-             }
-         }
-         const res = await fetch(`${this._url}/cards`, request);
-         return this._checkResponse(res);
-     }*/
 
 
     addCard({ name, link }) {
@@ -116,9 +106,14 @@ class MainApi {
             .then(this._checkResponse)
 
     }
+    setToken(token) {
+        this._headers.Authorization = `Bearer ${token}`;
+    }
 }
 
-const mainApi = new MainApi({
+
+
+export const mainApi = new MainApi({
     url: 'http://localhost:3000',//'https://api.apetruhin.nomoredomains.club',//'http://localhost:3001', //'https://api.apetruhin.nomoredomains.club',
     headers: {
         'Content-Type': 'application/json'
@@ -126,4 +121,3 @@ const mainApi = new MainApi({
 }
 );
 
-export default mainApi;

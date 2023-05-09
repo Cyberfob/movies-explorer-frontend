@@ -1,27 +1,27 @@
 const API_URL = 'http://localhost:3000';//'https://api.apetruhin.nomoredomains.club';//'http://localhost:3001'; //"https://api.apetruhin.nomoredomains.club";
 
-export const register = (password, email) => {
+export const register = (name, email, password) => {
     return fetch(`${API_URL}/signup`, {
         method: "POST",
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ password, email })
+        body: JSON.stringify({ name, email, password })
     }).then(checkResponse)
         .catch(err => {
             console.log(err);
         });
 };
 
-export const login = (password, email) => {
+export const login = (email, password) => {
     return fetch(`${API_URL}/signin`, {
         method: "POST",
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ password, email })
+        body: JSON.stringify({ email, password })
     })
         .then(checkResponse);
 };

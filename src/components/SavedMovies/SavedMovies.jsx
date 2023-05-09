@@ -1,6 +1,6 @@
 import './SavedMovies.css';
 import SearchForm from '../SearchForm/SearchForm';
-import MoviesCardList from '../MoviesCardList/MoviesCardList';
+import MoviesCardList from '../Movies/MoviesCardList/MoviesCardList';
 
 function SavedMovies() {
   return (

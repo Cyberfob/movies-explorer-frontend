@@ -10,15 +10,15 @@ import Login from '../Login/Login';
 import Register from '../Register/Register';
 import NotFound from '../NotFound/NotFound';
 import Footer from '../Footer/Footer';
-import mainApi from '../../utils/MainApi';
+import { mainApi } from '../../utils/MainApi';
 import * as auth from '../../utils/Auth';
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import { UserDataContext } from "../CurrentUserContext/CurrentUserContext";
 function App() {
 
   const [currentUser, setCurrentUser] = useState({});
-  const [authState, setAuthState] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //const [authState, setAuthState] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const navigate = useNavigate();
 
   const [errorProfile, setErrorProfile] = useState(false);
@@ -28,6 +28,8 @@ function App() {
   //Доработать
 
   React.useEffect(() => {
+    // some effect
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     checkToken();
   }, []);
 
@@ -37,7 +39,6 @@ function App() {
       mainApi.getUserInfo()
         .then((userData) => {
           setCurrentUser(userData.data);
-          setAuthState(true);
           setIsLoggedIn(true);
           navigate('/movies');
         })
@@ -56,7 +57,6 @@ function App() {
       .then((data) => {
         if (data.token) {
           localStorage.setItem("jwt", data.token);
-          setAuthState(true);
           setIsLoggedIn(true);
           navigate("/movies");
         }
@@ -64,7 +64,6 @@ function App() {
       .catch((err) => {
         setErrorLogin(err);
         console.log(errorLogin)
-        setAuthState(false);
         setIsLoggedIn(false);
       });
   };

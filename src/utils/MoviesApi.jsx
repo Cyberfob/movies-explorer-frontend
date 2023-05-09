@@ -22,7 +22,7 @@ class MoviesApi {
 
 export const moviesApi = new MoviesApi({
   mode: 'no-cors',
-  baseUrl: 'http://localhost:3000',//'https://api.nomoreparties.co/beatfilm-movies',
+  url: 'https://api.nomoreparties.co/beatfilm-movies',
   headers: {
     Authorization: '',
     'Content-Type': 'application/json',
