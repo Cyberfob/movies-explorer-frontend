@@ -117,9 +117,14 @@ class MainApi {
             body: JSON.stringify(data),
         }).then(this._handleResponse);
     }
+
+    deleteMovie(id) {
+        return fetch(`${this._url}/movies/${id}`, {
+            method: 'DELETE',
+            headers: this._headers,
+        }).then(this._handleResponse);
+    }
 }
-
-
 
 export const mainApi = new MainApi({
     url: 'http://localhost:3000',//'https://api.apetruhin.nomoredomains.club',//'http://localhost:3001', //'https://api.apetruhin.nomoredomains.club',
