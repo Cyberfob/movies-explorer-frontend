@@ -18,7 +18,7 @@ function App() {
 
   const [currentUser, setCurrentUser] = useState({});
   //const [authState, setAuthState] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   const [errorProfile, setErrorProfile] = useState(false);
@@ -33,6 +33,7 @@ function App() {
 
   function checkToken() {
     const jwt = localStorage.getItem('jwt')
+    mainApi.setToken(jwt);
     if (jwt) {
       mainApi.getUserInfo()
         .then((userData) => {

@@ -89,23 +89,14 @@ class MainApi {
             .then(this._checkResponse)
 
     }
-
-    setProfileAvatar(link) {
-
-        const request = {
-            method: "PATCH",
-            headers: {
-                Authorization: `Bearer ${this._getToken()}`,
-                ...this._headers
-            },
-            body: JSON.stringify({
-                avatar: link
-            })
-        }
-        return fetch(`${this._url}/users/me/avatar`, request)
-            .then(this._checkResponse)
-
+    updateProfileInfo(name, email) {
+        return fetch(`${this._url}/users/me`, {
+            method: 'PATCH',
+            headers: this._headers,
+            body: JSON.stringify({ name, email }),
+        }).then(this._checkResponse);
     }
+
     setToken(token) {
         this._headers.Authorization = `Bearer ${token}`;
     }
@@ -125,6 +116,7 @@ class MainApi {
         }).then(this._handleResponse);
     }
 }
+
 
 export const mainApi = new MainApi({
     url: 'http://localhost:3000',//'https://api.apetruhin.nomoredomains.club',//'http://localhost:3001', //'https://api.apetruhin.nomoredomains.club',

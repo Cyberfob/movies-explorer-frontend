@@ -50,7 +50,7 @@
   margin: 0 0 6px 0;
 }
 
-.movies-card__button_type_favorite {
+.movies-card__button_type_favorite-enable {
   background-image: url('../../../images/favorite-enabled.svg');
 }
 

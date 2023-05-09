@@ -21,7 +21,7 @@ function SearchForm({ filterMovies, required = true, page }) {
       setValue(searchMovies);
       filterMovies(searchMovies);
     }
-    if (page === 'movies') {
+    if (page === 'saved-movies') {
       filterMovies({ name: '', isShorts: false });
       setValue({ name: '', isShorts: false });
     }
