@@ -109,6 +109,14 @@ class MainApi {
     setToken(token) {
         this._headers.Authorization = `Bearer ${token}`;
     }
+
+    saveMovie(data) {
+        return fetch(`${this._url}/movies`, {
+            method: 'POST',
+            headers: this._headers,
+            body: JSON.stringify(data),
+        }).then(this._handleResponse);
+    }
 }
 
 

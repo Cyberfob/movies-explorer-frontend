@@ -18,29 +18,58 @@ function MoviesCard({ card, onClickUpdateMovie }) {
   const duration = `${durationH}${durationM}`.trim();
 
   return (
-    <li className="movies-card">
+
+    <article className="movies-card">
+      <a className="movies-card__link-image link-animation">
+        <img
+          className="movies-card__image"
+          src={card.thumbnail}
+          alt="Описание картинки"
+        />
+      </a>
       <div className="movies-card__container">
         <div className="movies-card__info">
           <h2 className="movies-card__title">{card.nameRU}</h2>
-          <p className="movies-card__duration">{duration}</p>
-        </div>
 
+
+        </div>
         <button
           className={`movies-card__button ${typeButton} ${typeSaveButton} link-animation`}
-          onClick={handleSaveMovie}
-          aria-label={typeAriaButton}
           type="button"
+          aria-label="Сохранить"
+          onClick={handleSaveMovie}
         />
+
       </div>
-      <a className="movies-card__link-image link-animation" href={card.trailerLink} target="_blank" rel="noreferrer">
-        <img
-          className="movies-card__image"
-          alt="Картинка фильма"
-          src={card.thumbnail}
-        />
-      </a>
-    </li>
+      <hr className='movies-card__line'></hr>
+      <p className="movies-card__duration">{duration}</p>
+    </article>
   );
 }
+///////////////////////
+/* <li className="movies-card">
+   <div className="movies-card__container">
+     <div className="movies-card__info">
+       <h2 className="movies-card__title">{card.nameRU}</h2>
+       <p className="movies-card__duration">{duration}</p>
+     </div>
+
+     <button
+       className={`movies-card__button ${typeButton} ${typeSaveButton} link-animation`}
+       onClick={handleSaveMovie}
+       aria-label={typeAriaButton}
+       type="button"
+     />
+   </div>
+   <a className="movies-card__link-image link-animation" href={card.trailerLink} target="_blank" rel="noreferrer">
+     <img
+       className="movies-card__image"
+       alt="Картинка фильма"
+       src={card.thumbnail}
+     />
+   </a>
+ </li>
+);
+}*/
 
 export default MoviesCard;

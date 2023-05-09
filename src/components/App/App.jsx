@@ -28,8 +28,6 @@ function App() {
   //Доработать
 
   React.useEffect(() => {
-    // some effect
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     checkToken();
   }, []);
 
