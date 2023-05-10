@@ -72,6 +72,12 @@
   text-align: end;
 }
 
+.navigation-logged-in__profile_margin-left {
+  position: relative;
+  margin-left: 20px;
+  color: #fff;
+}
+
 @media screen and (max-width: 768px) {
   .navigation-logged-in__menu {
     display: none;

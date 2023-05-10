@@ -10,7 +10,6 @@ function MoviesCard({ card, onClickUpdateMovie }) {
   const typeAriaButton = pathname === '/saved-movies' ? 'Удалить' : typeAriaSaveButton;
 
   const handleSaveMovie = () => {
-
     onClickUpdateMovie(card);
     console.log(card.saved)
   };
@@ -22,7 +21,7 @@ function MoviesCard({ card, onClickUpdateMovie }) {
   return (
 
     <article className="movies-card">
-      <a className="movies-card__link-image link-animation">
+      <a className="movies-card__link-image link-animation" href={card.trailerLink} target="_blank" rel="noreferrer">
         <img
           className="movies-card__image"
           src={card.thumbnail}

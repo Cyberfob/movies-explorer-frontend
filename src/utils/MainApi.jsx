@@ -46,7 +46,7 @@ class MainApi {
         return fetch(`${this._url}/movies`, {
             method: 'GET',
             headers: this._headers,
-        }).then(this._handleResponse);
+        }).then(this._checkResponse);
     }
 
 

@@ -41,10 +41,6 @@ function Movies() {
         setIsShowPreloader(true);
         Promise.all([moviesApi.getMovies(), mainApi.getSavedMovies()])
           .then(([beatMovies, { data: savedMovies }]) => {
-            if (savedMovies === undefined) {
-              savedMovies = [];
-            }
-            console.log(beatMovies, { data: savedMovies })
             const preparedMovies = beatMovies.map((movie) => {
               const savedMovie = savedMovies.find((savedFilm) => savedFilm.movieId === movie.id);
               movie._id = savedMovie !== undefined ? savedMovie._id : '';

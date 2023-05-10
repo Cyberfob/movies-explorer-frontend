@@ -16,24 +16,18 @@ function SavedMovies() {
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
     mainApi.setToken(jwt);
-    const savedMovies = JSON.parse(localStorage.getItem('saved-movies') || '[]');
-    if (savedMovies.length === 0) {
-      setIsShowPreloader(true);
-      mainApi.getSavedMovies()
-        .then((serverMovies) => {
-          localStorage.setItem('saved-movies', JSON.stringify(serverMovies.data));
-          setSourceMovies(serverMovies.data);
-          setFilteredMovies(serverMovies.data);
-          setIsShowPreloader(false);
-        })
-        .catch((err) => {
-          console.error(err);
-          setApiHasError(true);
-        });
-    } else {
-      setSourceMovies(savedMovies);
-      setFilteredMovies(savedMovies);
-    }
+    setIsShowPreloader(true);
+    mainApi.getSavedMovies()
+      .then((serverMovies) => {
+        localStorage.setItem('saved-movies', JSON.stringify(serverMovies.data));
+        setSourceMovies(serverMovies.data);
+        setFilteredMovies(serverMovies.data);
+        setIsShowPreloader(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setApiHasError(true);
+      });
   }, []);
 
   const filterMovies = (search) => {
