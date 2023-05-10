@@ -106,14 +106,14 @@ class MainApi {
             method: 'POST',
             headers: this._headers,
             body: JSON.stringify(data),
-        }).then(this._handleResponse);
+        }).then(this._checkResponse);
     }
 
     deleteMovie(id) {
         return fetch(`${this._url}/movies/${id}`, {
             method: 'DELETE',
             headers: this._headers,
-        }).then(this._handleResponse);
+        }).then(this._checkResponse);
     }
 }
 

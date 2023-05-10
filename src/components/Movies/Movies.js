@@ -113,7 +113,6 @@ function Movies() {
         setSourceMovies((beatMovies) => {
           localStorage.removeItem('saved-movies');
           const updatedMovies = beatMovies.map((beatMovie) => {
-            console.log(beatMovie)
             if (beatMovie.id === serverMovie.movieId) {
               beatMovie.saved = true;
               beatMovie._id = serverMovie._id;
@@ -132,7 +131,7 @@ function Movies() {
       });
   };
 
-  const handleClickUpdateMovie = (movie) => (movie.saved ? handleDeleteMovie(movie) : handleSaveMoovie(movie));
+  const handleClickUpdateMovie = (movie) => (movie.saved === true ? handleDeleteMovie(movie) : handleSaveMoovie(movie));
 
   return (
     <main className="movies">

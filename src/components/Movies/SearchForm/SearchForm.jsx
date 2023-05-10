@@ -25,7 +25,7 @@ function SearchForm({ filterMovies, required = true, page }) {
       filterMovies({ name: '', isShorts: false });
       setValue({ name: '', isShorts: false });
     }
-  }, []);
+  }, [page]);
 
   const handleChange = (e) => {
     const {

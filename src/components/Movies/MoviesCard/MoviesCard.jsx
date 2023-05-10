@@ -10,8 +10,9 @@ function MoviesCard({ card, onClickUpdateMovie }) {
   const typeAriaButton = pathname === '/saved-movies' ? 'Удалить' : typeAriaSaveButton;
 
   const handleSaveMovie = () => {
-    console.log(card.saved)
+
     onClickUpdateMovie(card);
+    console.log(card.saved)
   };
 
   const durationH = card.duration >= 60 ? `${Math.floor(card.duration / 60)} ч ` : '';
