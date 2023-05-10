@@ -119,7 +119,7 @@ class MainApi {
 
 
 export const mainApi = new MainApi({
-    url: 'http://localhost:3000',//'https://api.apetruhin.nomoredomains.club',//'http://localhost:3001', //'https://api.apetruhin.nomoredomains.club',
+    url: 'https://http://api.apetruhin.nomoredomains.work',
     headers: {
         'Content-Type': 'application/json'
     }
