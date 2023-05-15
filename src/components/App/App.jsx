@@ -56,8 +56,7 @@ function App() {
       .then((data) => {
         if (data.token) {
           localStorage.setItem("jwt", data.token);
-          setIsLoggedIn(true);
-          navigate("/movies");
+          checkToken();
         }
       })
       .catch((err) => {

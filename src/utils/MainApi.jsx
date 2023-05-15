@@ -29,14 +29,14 @@ class MainApi {
             .then(this._checkResponse)
     }
 
-    setUserInfo({ name, about }) {
+    setUserInfo({ name, email }) {
         const request = {
             method: "PATCH",
             headers: {
                 Authorization: `Bearer ${this._getToken()}`,
                 ...this._headers
             },
-            body: JSON.stringify({ name, about })
+            body: JSON.stringify({ name, email })
         }
         return fetch(`${this._url}/users/me`, request)
             .then(this._checkResponse)
