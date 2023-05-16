@@ -28,7 +28,7 @@ function Login({ handleLogin, loggedIn, errorLogin }) {
   }
   useEffect(() => {
     handleErrorrMessage('');
-  }, []);
+  }, [handleChange]);
 
   useEffect(() => {
     handleErrorrMessage();
