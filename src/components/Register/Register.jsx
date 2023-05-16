@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './Register.css';
 import logo from '../../images/logo.svg';
 import useFormValidation from '../../hooks/useFormValidation';
-
-function Register({ handleRegister, loggedIn, errorRegister }) {
+import React from 'react';
+function Register({ handleRegister, errorRegister }) {
 
   // передача данных в хук для валидации формы
   const {
     values, errors, isValid, handleChange,
   } = useFormValidation();
+
+  const [errorText, setErrorText] = useState('');
 
   // значения из полей ввода
   const { name, email, password } = values;
@@ -21,6 +24,23 @@ function Register({ handleRegister, loggedIn, errorRegister }) {
       handleRegister(name, email, password);
     }
   };
+
+  function handleErrorrMessage() {
+    if (errorRegister === 400) {
+      setErrorText('Ошибка при вводе данных регистрации')
+    } else if (errorRegister === 500) {
+      setErrorText('Ошибка сервера. Попробуйте позже еще раз.')
+    } else if (errorRegister) {
+      console.log(errorRegister)
+      setErrorText('Такого пользователя не существует.')
+    } else {
+      return;
+    }
+  }
+
+  useEffect(() => {
+    handleErrorrMessage();
+  }, [errorRegister]);
 
   return (
     <section className="sign">
@@ -99,7 +119,7 @@ function Register({ handleRegister, loggedIn, errorRegister }) {
 
         <fieldset className="sign__fieldset">
           <span className="sign__form-error sign__form-error_type_form">
-            {errorRegister.message}
+            {errorText}
           </span>
 
           <button

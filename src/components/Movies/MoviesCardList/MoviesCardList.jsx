@@ -14,7 +14,6 @@ function MoviesCardList({
   return (
     <div className="section movies-cards">
       <ul className="movies-cards__list">
-        {console.log(`cards = ${cards}`)}
         {cards?.map((card) => (
           <MoviesCard
             key={card.id || card._id}

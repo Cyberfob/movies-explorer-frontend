@@ -15,11 +15,12 @@ function Login({ handleLogin, loggedIn, errorLogin }) {
   const { email, password } = values;
 
   function handleErrorrMessage() {
-    if (errorLogin === 401) {
+    if (errorLogin === 400) {
       setErrorText('Ошибка при вводе логина или пароля')
     } else if (errorLogin === 500) {
       setErrorText('Ошибка сервера. Попробуйте позже еще раз.')
     } else if (errorLogin) {
+      console.log(errorLogin)
       setErrorText('Такого пользователя не существует.')
     } else {
       return;

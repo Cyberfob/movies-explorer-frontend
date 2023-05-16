@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, Navigate, } from 'react-router-dom';
 import React, { useState } from 'react';
 import './App.css';
 import Header from '../Header/Header';
@@ -25,8 +25,6 @@ function App() {
   const [errorLogin, setErrorLogin] = useState(false);
   const [errorRegister, setErrorRegister] = useState(false);
 
-  //Доработать
-
   React.useEffect(() => {
     checkToken();
   }, []);
@@ -37,11 +35,12 @@ function App() {
     if (jwt) {
       mainApi.getUserInfo()
         .then((userData) => {
+          console.log(`чек токен = ${userData}`)
           setCurrentUser(userData.data);
           setIsLoggedIn(true);
           navigate('/movies');
         })
-        .catch((err) => {
+        .catch(() => {
           navigate('/');
         })
     } else {
@@ -137,18 +136,18 @@ function App() {
           <Route
             path="/signin"
             element={
-              isLoggedIn ? (
+              isLoggedIn === true ? (
                 <Navigate to="/movies" />) :
+                //navigate('/signin')
                 (<Login handleLogin={handleLogin} isLoggedIn={isLoggedIn} errorLogin={errorLogin} />)
             }
           />
           <Route
             path="/signup"
             element={
-              isLoggedIn ? (<Navigate to="/movies" />) :
+              isLoggedIn === true ? (<Navigate to="/movies" />) :
                 (<Register
                   handleRegister={handleRegister}
-                  isLoggedIn={isLoggedIn}
                   errorRegister={errorRegister}
                 />
                 )

@@ -1,4 +1,4 @@
-const API_URL = 'https://api.apetruhin.nomoredomains.work';
+const API_URL = 'http://localhost:3000';//'https://api.apetruhin.nomoredomains.work';
 
 export const register = (name, email, password) => {
     return fetch(`${API_URL}/signup`, {
@@ -9,9 +9,6 @@ export const register = (name, email, password) => {
         },
         body: JSON.stringify({ name, email, password })
     }).then(checkResponse)
-        .catch(err => {
-            console.log(err);
-        });
 };
 
 export const login = (email, password) => {
@@ -44,5 +41,5 @@ export const checkResponse = res => {
     if (res.ok) {
         return res.json();
     }
-    return Promise.reject(`Ошибка: ${res.status}`);
+    return Promise.reject(res.status);
 };

@@ -47,30 +47,5 @@ function MoviesCard({ card, onClickUpdateMovie }) {
     </article>
   );
 }
-///////////////////////
-/* <li className="movies-card">
-   <div className="movies-card__container">
-     <div className="movies-card__info">
-       <h2 className="movies-card__title">{card.nameRU}</h2>
-       <p className="movies-card__duration">{duration}</p>
-     </div>
-
-     <button
-       className={`movies-card__button ${typeButton} ${typeSaveButton} link-animation`}
-       onClick={handleSaveMovie}
-       aria-label={typeAriaButton}
-       type="button"
-     />
-   </div>
-   <a className="movies-card__link-image link-animation" href={card.trailerLink} target="_blank" rel="noreferrer">
-     <img
-       className="movies-card__image"
-       alt="Картинка фильма"
-       src={card.thumbnail}
-     />
-   </a>
- </li>
-);
-}*/
 
 export default MoviesCard;
