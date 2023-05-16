@@ -82,7 +82,7 @@ function NavigationLoggedIn() {
               </Link>
             </li>
           </ul>
-          <div className={`navigation-logged-in__profile`}>
+          <div className={`${pathname === '/' ? 'navigation-logged-in__profile_margin-left' : 'navigation-logged-in__profile'}`}>
             <Link
               to="/profile"
               className={`${isBurgerOpen ? 'navigation-logged-in__link_type_profile-burger' : ''}
