@@ -28,15 +28,19 @@ function Register({ handleRegister, errorRegister }) {
   function handleErrorrMessage() {
     if (errorRegister === 400) {
       setErrorText('Ошибка при вводе данных регистрации')
+    } else if (errorRegister === 409) {
+      setErrorText('Ошибка при регистрации')
     } else if (errorRegister === 500) {
-      setErrorText('Ошибка сервера. Попробуйте позже еще раз.')
-    } else if (errorRegister) {
       console.log(errorRegister)
       setErrorText('Такого пользователя не существует.')
     } else {
       return;
     }
   }
+
+  useEffect(() => {
+    handleErrorrMessage('');
+  }, []);
 
   useEffect(() => {
     handleErrorrMessage();
