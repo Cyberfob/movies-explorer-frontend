@@ -39,10 +39,6 @@ function Register({ handleRegister, errorRegister }) {
   }
 
   useEffect(() => {
-    handleErrorrMessage('');
-  }, [handleChange]);
-
-  useEffect(() => {
     handleErrorrMessage();
   }, [errorRegister]);
 
